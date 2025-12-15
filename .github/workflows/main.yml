@@ -12,10 +12,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-- name: Run Safety Checks
+      - name: Run Safety Checks
         run: |
           echo "🤖 Robot: Loading the code..."
           echo "🤖 Robot: Checking for errors..."
+          # This acts as a simulated test.
           echo "✅ SAFETY CHECK PASSED: The code looks good!"
 
   # JOB 2: The Shipping Department (CD)
