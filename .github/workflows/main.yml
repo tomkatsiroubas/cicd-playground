@@ -1,0 +1,30 @@
+name: CI/CD Simulation
+
+# THE TRIGGER: When do we start working?
+on: [push]
+
+# THE JOBS: What tasks do we perform?
+jobs:
+  # JOB 1: The Quality Control (CI)
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Safety Checks
+        run: |
+          echo "🤖 Robot: Loading the code..."
+          echo "🤖 Robot: Checking for errors..."
+          # This acts as a simulated test.
+          echo "✅ SAFETY CHECK PASSED: The code looks good!"
+
+  # JOB 2: The Shipping Department (CD)
+  deploy:
+    needs: build-and-test  # Wait for Job 1 to finish!
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate Deployment
+        run: |
+          echo "🚀 Shipping the code to production..."
+          echo "🎉 SUCCESS: Version deployed to customers!"
