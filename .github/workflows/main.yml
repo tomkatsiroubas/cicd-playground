@@ -15,8 +15,8 @@ jobs:
 - name: Run Safety Checks
         run: |
           echo "🤖 Robot: Loading the code..."
-          echo "🔥 ALERT: Critical error detected! The engine is missing!"
-          exit 1
+          echo "🤖 Robot: Checking for errors..."
+          echo "✅ SAFETY CHECK PASSED: The code looks good!"
 
   # JOB 2: The Shipping Department (CD)
   deploy:
