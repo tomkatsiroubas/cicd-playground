@@ -19,10 +19,11 @@ jobs:
           # This acts as a simulated test.
           echo "✅ SAFETY CHECK PASSED: The code looks good!"
 
-  # JOB 2: The Shipping Department (CD)
+# JOB 2: The Shipping Department (CD)
   deploy:
-    needs: build-and-test  # Wait for Job 1 to finish!
+    needs: build-and-test
     runs-on: ubuntu-latest
+    environment: Production  # <--- THIS IS THE NEW LINE
     steps:
       - name: Simulate Deployment
         run: |
